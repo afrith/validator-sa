@@ -1,7 +1,14 @@
 import {
   isValidSouthAfricanIDNumber, lastDigitIsValidCheckDigit,
   normalizeSouthAfricanIDNumber,
-  getValidationErrors
+  getValidationErrors,
+  determineLuhnDigit
 } from './idnumber'
 
-export { isValidSouthAfricanIDNumber, lastDigitIsValidCheckDigit, normalizeSouthAfricanIDNumber, getValidationErrors }
+export {
+  isValidSouthAfricanIDNumber,
+  lastDigitIsValidCheckDigit,
+  normalizeSouthAfricanIDNumber,
+  getValidationErrors,
+  determineLuhnDigit
+}

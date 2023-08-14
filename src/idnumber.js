@@ -6,7 +6,7 @@ const substrAsNumber = (start, howMany) => s => s && Number(s.substr(start, howM
 
 const has13Characters = v => v && v.length === 13
 
-const checkDigit = R.pipe(
+export const determineLuhnDigit = R.pipe(
   s => s.replace(/\D/g, '').split('').map(d => Number(d)),
   R.reverse,
   arr => arr.map((d, ix) => {
@@ -28,7 +28,7 @@ const startsWithIDNumberBirthdate = R.allPass([
 
 export const lastDigitIsValidCheckDigit = R.pipe(
   R.splitAt(-1),
-  ([ init, last ]) => Number(last) === checkDigit(init)
+  ([ init, last ]) => Number(last) === determineLuhnDigit(init)
 )
 
 const isValidCitizenOrResident = R.pipe(
