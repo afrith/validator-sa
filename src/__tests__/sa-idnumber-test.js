@@ -19,10 +19,12 @@ describe('South African ID number validation', () => {
     expect(isValidSouthAfricanIDNumber(idnoNeitherResidentNorCitizen)).toBe(false)
   })
 
-  it('ensures the 12th digit is 8', () => {
+  it('ensures the 12th digit is 8 or 9', () => {
     const idnoCitizen = '9307184896082'
+    const idnoCitizen9 = '9307184896090'
     const idnoInvalid12thDigit = '9307184896074'
     expect(isValidSouthAfricanIDNumber(idnoCitizen)).toBe(true)
+    expect(isValidSouthAfricanIDNumber(idnoCitizen9)).toBe(true)
     expect(isValidSouthAfricanIDNumber(idnoInvalid12thDigit)).toBe(false)
   })
 })
@@ -39,13 +41,13 @@ describe('validation errors', () => {
     expect(getValidationErrors('123')).toStrictEqual([
       'Check digit does not match',
       'Does not have 13 characters',
-      'The 12th digit is required to be 8'
+      'The 12th digit is required to be 8 or 9'
     ])
-    expect(getValidationErrors('9922019999999')).toStrictEqual([
+    expect(getValidationErrors('9922019999977')).toStrictEqual([
       'Not a valid date of birth',
       'Check digit does not match',
       'Is neither citizen nor resident',
-      'The 12th digit is required to be 8'
+      'The 12th digit is required to be 8 or 9'
     ])
   })
   it('provides an empty list, if idnumber is valid', () => {

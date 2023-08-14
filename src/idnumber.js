@@ -36,9 +36,9 @@ const isValidCitizenOrResident = R.pipe(
   R.gt(2)
 )
 
-const is12thDigit8 = R.pipe(
+const is12thDigitValid = R.pipe(
   substrAsNumber(11, 1),
-  R.equals(8)
+  R.flip(R.includes)([8, 9])
 )
 const validatorsAndErrorMessages = [
   [
@@ -47,7 +47,7 @@ const validatorsAndErrorMessages = [
   [ lastDigitIsValidCheckDigit, 'Check digit does not match'],
   [ has13Characters, 'Does not have 13 characters'],
   [ isValidCitizenOrResident, 'Is neither citizen nor resident'],
-  [ is12thDigit8, 'The 12th digit is required to be 8']
+  [ is12thDigitValid, 'The 12th digit is required to be 8 or 9']
 ]
 
 /**
