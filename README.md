@@ -35,3 +35,15 @@ var isValid = validator.isValidSouthAfricanIDNumber('123')
 Documentation is [here](./api.md).
 
 TODO: Not all functions are documented.
+
+# Development
+
+## Publish
+
+In order to publish to npmjs.com, ensure to run the `prepublish` script first,
+then publish the package:
+
+* `npm run prepublish`
+* `npm version patch`
+* `npm publish`
+
