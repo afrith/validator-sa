@@ -1,6 +1,6 @@
 {
-  "name": "validator-sa",
-  "version": "0.2.7",
+  "name": "@adrianfrith/validator-sa",
+  "version": "0.2.8",
   "description": "Validation and sanitation for strings, specific to South Africa, compare https://github.com/chriso/validator.js for non-South-Africa specific validation and sanitization",
   "main": "dist",
   "scripts": {
@@ -20,9 +20,13 @@
     "South Africa"
   ],
   "author": "Chris Oloff <chris@uber5.com> (http://about.uber5.com/)",
+  "contributors": [
+    "Chris Oloff <chris@uber5.com> (http://about.uber5.com/)",
+    "Adrian Frith <adrianf@da.org.za>"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Chris927/validator-sa.git"
+    "url": "https://github.com/afrith/validator-sa.git"
   },
   "license": "MIT",
   "devDependencies": {
